@@ -1,0 +1,86 @@
+﻿@model CarsInventory.Domain.Car
+<div class="modal fade" id="editModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">@ViewBag.Title</h4>
+            </div>
+            <div class="modal-body">
+                <form id="Form1" role="form" action="@Url.Action("UpdateCars", "Cars")"  method="post">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <input id="Brand" name="Brand" class="form-control" type="text" value="@Model.Brand" required  placeholder="Brand"/>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <input id="Model" name="Model" class="form-control" type="text" value="@Model.Model" required placeholder="Model" />
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <input id="Year" name="Year" class="form-control" type="number" value="@Model.Year" placeholder="Year" required />
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <input id="Price" name="Price" class="form-control" type="number" value="@Model.Price" placeholder="Price" required />
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <div class="checkbox">
+                                    <label class="">
+                                        <input id="New" name="New" class="" type="checkbox" value="@Model.New" /> Is New ?
+                                    </label>
+                                </div>
+                                @*<input id="New" name="New" class="form-control" type="checkbox" value="@Model.New" />*@
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                
+                                <input type="submit" class="form-control blue_btn" />
+                            </div>
+                        </div>
+                        </div>
+
+                        <input id="Id" name="Id" type="hidden" value="@Model.Id" required />                       
+                        <input id="UserId" name="UserId" type="hidden" value="@Convert.ToString(Session["userId"])" />
+                        
+                        @*<input type="button" value="Submit" onclick="SaveData()" />*@
+</form>
+            </div>
+            @*<div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>*@
+        </div>
+    </div>
+</div>
+<script>
+    function SaveData() {
+        $.ajax({
+            type: 'post',
+            url: '@Url.Action("UpdateCars", "Cars")',
+            contentType: "application/json",
+            data: JSON.stringify({
+                Id: $("#Id").val(),
+                Brand: $("#Brand").val(),
+                Model: $("#Model").val(),
+                Year: $("#Year").val(),
+                Price: $("#Price").val(),
+                New: $("#New").val(),
+                UserId: $("#UserId").val()
+            }),
+            success: function () {
+                alert("Data is Saved Successfully");
+            },
+            error: function () {
+                alert("Error Occurred");
+            }
+
+        });
+    }
+</script>

@@ -1,0 +1,14 @@
+E:\Bhupander\CarsInventory\CarsInventory.Domain\bin\Debug\CarsInventory.Domain.dll
+E:\Bhupander\CarsInventory\CarsInventory.Domain\bin\Debug\CarsInventory.Domain.pdb
+E:\Bhupander\CarsInventory\CarsInventory.Domain\obj\Debug\CarsInventory.Domain.dll
+E:\Bhupander\CarsInventory\CarsInventory.Domain\obj\Debug\CarsInventory.Domain.pdb
+E:\DEMO\CarsInventory\CarsInventory\CarsInventory.Domain\bin\Debug\CarsInventory.Domain.dll.config
+E:\DEMO\CarsInventory\CarsInventory\CarsInventory.Domain\bin\Debug\CarsInventory.Domain.dll
+E:\DEMO\CarsInventory\CarsInventory\CarsInventory.Domain\bin\Debug\CarsInventory.Domain.pdb
+E:\DEMO\CarsInventory\CarsInventory\CarsInventory.Domain\bin\Debug\EntityFramework.dll
+E:\DEMO\CarsInventory\CarsInventory\CarsInventory.Domain\bin\Debug\EntityFramework.SqlServer.dll
+E:\DEMO\CarsInventory\CarsInventory\CarsInventory.Domain\bin\Debug\EntityFramework.xml
+E:\DEMO\CarsInventory\CarsInventory\CarsInventory.Domain\bin\Debug\EntityFramework.SqlServer.xml
+E:\DEMO\CarsInventory\CarsInventory\CarsInventory.Domain\obj\Debug\CarsInventory.Domain.csprojResolveAssemblyReference.cache
+E:\DEMO\CarsInventory\CarsInventory\CarsInventory.Domain\obj\Debug\CarsInventory.Domain.dll
+E:\DEMO\CarsInventory\CarsInventory\CarsInventory.Domain\obj\Debug\CarsInventory.Domain.pdb

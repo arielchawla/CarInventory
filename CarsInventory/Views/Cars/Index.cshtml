@@ -1,0 +1,61 @@
+﻿@model IEnumerable<CarsInventory.Domain.Car>
+@{
+    ViewBag.Title = "Index";
+}
+<div id="modalWrapper">
+    @* Inject form here *@
+</div>
+<a href="#" onclick="editProduct('')" class="btn btn-primary">Add</a>
+<div>
+    <table id="searchTblId" class="table" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th hidden>Id</th>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Year</th>
+                <th>Price</th>
+                <th>New</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var car in Model)
+            {
+                <tr>
+                    <td hidden>@car.Id</td>
+                    <td>@car.Brand</td>
+                    <td>@car.Model</td>
+                    <td>@car.Year</td>
+                    <td>@car.Price</td>
+                    <td>@car.New</td>
+                    <td><a href="#" onclick="editProduct('@car.Id')" class="btn btn-primary">Edit</a></td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+
+
+@section scripts{
+    <link href="~/Content/jquery.dataTables.min.css" rel="stylesheet" />
+    <script src="~/Content/jquery.dataTables.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#searchTblId').DataTable();
+        });
+        function editProduct(Id) {
+            $.ajax({
+                url: '/Cars/GetCarDetailsModal/' + Id, // The method name + paramater
+                success: function (data) {
+                    $('#modalWrapper').html(data); // This should be an empty div where you can inject your new html (the partial view)
+                    $('#editModal').modal();
+
+                }
+            });
+        }
+
+    </script>
+}
